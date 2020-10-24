@@ -1,0 +1,29 @@
+{
+  "name": "dynamicarray",
+  "version": "1.0.0",
+  "description": "Simple but flexible implementation of dynamic arrays.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Killusions/dynamicarray.git"
+  },
+  "keywords": [
+    "dynamic",
+    "array"
+  ],
+  "author": "Linus Schlumberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Killusions/dynamicarray/issues"
+  },
+  "homepage": "https://github.com/Killusions/dynamicarray#readme"
+}
