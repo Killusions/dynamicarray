@@ -65,18 +65,20 @@ function iterate(array: any[], exec: (x?: any, i?: number, a?: any[]) => any, do
 
 export const DynamicArray = {
   forEach(array: any[], exec: (x?: any, i?: number, a?: any[]) => any): void {
-    iterate(array, exec, false);
+    if (array.length > 0) {
+      iterate(array, exec, false);
+    }
   },
   map(array: any[], exec: (x?: any, i?: number, a?: any[]) => any): any[] {
-    return iterate(array, exec, true);
+    return array.length > 0 ? iterate(array, exec, true) : [];
   },
   filter(array: any[], exec: (x?: any, i?: number, a?: any[]) => boolean): any[] {
-    return iterate(array, exec, true).filter((item: any) => item);
+    return array.length > 0 ? iterate(array, exec, true).filter((item: any) => item) : [];
   },
   some(array: any[], exec: (x?: any, i?: number, a?: any[]) => boolean): boolean {
-    return iterate(array, exec, false, true);
+    return array.length > 0 ? iterate(array, exec, false, true) : false;
   },
   every(array: any[], exec: (x?: any, i?: number, a?: any[]) => boolean): boolean {
-    return iterate(array, exec, false, false);
+    return array.length > 0 ? iterate(array, exec, false, false) : true;
   }
 };

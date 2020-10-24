@@ -66,18 +66,20 @@ function iterate(array, exec, doReturnValues, stopOnValue, notStoppedReturnValue
 }
 exports.DynamicArray = {
     forEach(array, exec) {
-        iterate(array, exec, false);
+        if (array.length > 0) {
+            iterate(array, exec, false);
+        }
     },
     map(array, exec) {
-        return iterate(array, exec, true);
+        return array.length > 0 ? iterate(array, exec, true) : [];
     },
     filter(array, exec) {
-        return iterate(array, exec, true).filter((item) => item);
+        return array.length > 0 ? iterate(array, exec, true).filter((item) => item) : [];
     },
     some(array, exec) {
-        return iterate(array, exec, false, true);
+        return array.length > 0 ? iterate(array, exec, false, true) : false;
     },
     every(array, exec) {
-        return iterate(array, exec, false, false);
+        return array.length > 0 ? iterate(array, exec, false, false) : true;
     }
 };
