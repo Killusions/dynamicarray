@@ -4,9 +4,10 @@ function makeIterator(array: any[]) {
     [Symbol.iterator]() {
       return {
         next: function() {
-          const value = array[index];
+          const done = array.length - 1 < index;
+          const value = done ? undefined : array[index];
           index++;
-          return { value: value, done: value ? false : true };
+          return { value: value, done };
         }
       };
     }
