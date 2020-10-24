@@ -2,7 +2,7 @@
   "name": "dynamicarray",
   "version": "1.0.0",
   "description": "Simple but flexible implementation of dynamic arrays.",
-  "main": "index.js",
+  "main": "compiled/index.js",
   "dependencies": {},
   "devDependencies": {
     "typescript": "^4.0.3"
